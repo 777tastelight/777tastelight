@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+void print()
+{
+	printf("***************");
+	printf("start the game?");
+	printf("***************");
+}
+int game(unsigned int m,unsigned int n)
+{
+		if (n != m)
+		{
+			printf("wrong answer");
+			return 0;
+		}
+		if (n == m)
+			return 1;
+	}
+int main()
+{
+	srand((unsigned int)time(NULL));
+	print();
+	int a = 0;
+	scanf_s("%d", &a);
+	if (a == 1)
+		printf("START!");
+	unsigned int m = 0, n=1;
+	m = rand() % 100 + 1 ;
+	while (n!=m)
+	{
+		scanf_s("%u", &n);
+		game(m, n);
+		if (n == 0)
+			break;
+	}
+	if (game(m, n) == 1)
+		printf("right answer!");
+	return 0;
+}
