@@ -1,0 +1,15 @@
+bool containsDuplicate(int* nums, int numsSize){
+int i =1;
+for(numsSize=0;i<=sizeof nums;numsSize++)
+{
+
+for(i=1;i<sizeof nums;i++)
+{if(*(nums+numsSize)==*(nums+numsSize+i))
+{printf("true");
+break;
+}
+if(numsSize==sizeof nums-1)
+printf("false");
+}
+}
+return 0;}
