@@ -32,3 +32,4 @@ int* intersect(int* nums1, int nums1Size, int* nums2, int nums2Size, int* return
 	}
 	return intersect_arr;
   }
+return max> 0? max: 0; 
