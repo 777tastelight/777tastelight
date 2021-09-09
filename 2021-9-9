@@ -1,0 +1,34 @@
+int cmp_func(const void* a, const void* b)
+{
+	return (*(int*)a - *(int*)b);
+}
+
+int* intersect(int* nums1, int nums1Size, int* nums2, int nums2Size, int* returnSize)
+{
+	qsort(nums1, nums1Size, sizeof(int), cmp_func);
+	qsort(nums2, nums2Size, sizeof(int), cmp_func);
+
+	int new_size = (nums1 < nums2 ? nums1 : nums2);
+	int* intersect_arr = (int*)malloc(new_size * sizeof(int));
+	int i = 0, j = 0;
+	*returnSize = 0;
+
+	while ((i < nums1Size) && (j < nums2Size))
+	{
+		if (nums1[i] < nums2[j])
+		{
+			i++;
+		}
+		else if (nums1[i] > nums2[j])
+		{
+			j++;
+		}
+		else
+		{
+			intersect_arr[(*returnSize)++] = nums1[i];
+			i++;
+			j++;
+		}
+	}
+	return intersect_arr;
+  }
